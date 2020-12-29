@@ -13,6 +13,14 @@ class RocketEquation(input: List<String>) : Puzzle {
     }
 
     override fun part2(): Long {
-        TODO("Not yet implemented")
+        return masses.sumOf(this::calculateFuel)
+    }
+
+    private fun calculateFuel(mass: Long): Long {
+        val fuel = mass / 3 - 2
+        if (fuel <= 0) {
+            return 0
+        }
+        return fuel + calculateFuel(fuel)
     }
 }

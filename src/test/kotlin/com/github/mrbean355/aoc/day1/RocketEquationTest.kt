@@ -12,6 +12,11 @@ class RocketEquationTest : PuzzleTest(RocketEquation::class) {
         "day1/puzzle.txt" to 3271994L,
     )
 
-    override val part2TestCases: Map<String, Long> = emptyMap()
+    override val part2TestCases = mapOf(
+        "day1/part2_example1.txt" to 2L,
+        "day1/part2_example2.txt" to 966L,
+        "day1/part2_example3.txt" to 50346L,
+        "day1/puzzle.txt" to 4905116L,
+    )
 
 }
