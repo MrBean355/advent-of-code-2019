@@ -9,7 +9,8 @@ class ProgramAlarmTest : PuzzleTest(ProgramAlarm::class) {
         "day2/puzzle.txt" to 2842648L,
     )
 
-    override val part2TestCases = mapOf<String, Long>(
+    override val part2TestCases = mapOf(
+        "day2/puzzle.txt" to 9074L,
     )
 
 }

@@ -7,10 +7,25 @@ class ProgramAlarm(input: List<String>) : Puzzle {
     private val opcodes = input.single().split(',').map(String::toInt)
 
     override fun part1(): Long {
+        return runProgram(noun = 12, verb = 2)
+    }
+
+    override fun part2(): Long {
+        repeat(100) { noun ->
+            repeat(100) { verb ->
+                if (runProgram(noun, verb) == 19690720L) {
+                    return 100L * noun + verb
+                }
+            }
+        }
+        error("Couldn't find desired output")
+    }
+
+    private fun runProgram(noun: Int, verb: Int): Long {
         val opcodes = opcodes.toMutableList()
         if (opcodes.size > 12) {
-            opcodes[1] = 12
-            opcodes[2] = 2
+            opcodes[1] = noun
+            opcodes[2] = verb
         }
         var ptr = 0
 
@@ -33,9 +48,5 @@ class ProgramAlarm(input: List<String>) : Puzzle {
         }
 
         return opcodes[0].toLong()
-    }
-
-    override fun part2(): Long {
-        TODO("Not yet implemented")
     }
 }
