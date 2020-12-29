@@ -9,6 +9,7 @@ repositories {
 }
 
 dependencies {
+    testImplementation(kotlin("reflect"))
     testImplementation(kotlin("test-junit"))
 }
 
